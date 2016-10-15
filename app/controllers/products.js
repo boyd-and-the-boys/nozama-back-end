@@ -11,13 +11,13 @@ const index = (req, res, next) => {
     .then(products => res.json({ products }))
     .catch(err => next(err));
 };
-//
-// const show = (req, res, next) => {
-//   Product.findById(req.params.id)
-//     .then(product => product ? res.json({ product }) : next())
-//     .catch(err => next(err));
-// };
-//
+
+const show = (req, res, next) => {
+  Product.findById(req.params.id)
+    .then(product => product ? res.json({ product }) : next())
+    .catch(err => next(err));
+};
+
 const create = (req, res, next) => {
   let product = Object.assign(req.body.product, {
     _owner: req.currentUser._id,
@@ -56,7 +56,7 @@ const create = (req, res, next) => {
 
 module.exports = controller({
   index,
-//   show,
+  show,
   create,
 //   update,
 //   destroy,
