@@ -13,6 +13,9 @@ const index = (req, res, next) => {
 };
 
 const show = (req, res, next) => {
+  Order.findById(req.params.id)
+    .then(order => order ? res.json({ order }) : next())
+    .catch(err => next(err));
 };
 
 const create = (req, res, next) => {
@@ -26,9 +29,30 @@ const create = (req, res, next) => {
 };
 
 const update = (req, res, next) => {
+  let search = { _id: req.params.id, _owner: req.currentUser._id };
+  Order.findOne(search)
+    .then(order => {
+      if (!order) {
+        return next();
+      }
+      delete req.body._owner;  // disallow owner reassignment.
+      return order.update(req.body.order)
+        .then(() => res.sendStatus(200));
+    })
+    .catch(err => next(err));
 };
 
 const destroy = (req, res, next) => {
+  let search = { _id: req.params.id, _owner: req.currentUser._id };
+  Order.findOne(search)
+    .then(order => {
+      if (!order) {
+        return next();
+      }
+      return order.remove()
+        .then(() => res.sendStatus(200));
+    })
+    .catch(err => next(err));
 };
 
 module.exports = controller({
