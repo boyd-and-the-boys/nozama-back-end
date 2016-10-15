@@ -26,7 +26,6 @@ const create = (req, res, next) => {
     .then(order => res.json({ order }))
     .catch(err => next(err));
 };
-};
 
 const update = (req, res, next) => {
   let search = { _id: req.params.id, _owner: req.currentUser._id };

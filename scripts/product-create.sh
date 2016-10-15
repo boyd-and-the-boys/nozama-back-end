@@ -5,6 +5,6 @@ curl --include --request POST http://localhost:3000/products \
   --data '{
     "product": {
       "name": "The Herbinator",
-      "price": "19.99"
+      "price": 19.99
     }
   }'

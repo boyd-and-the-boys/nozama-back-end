@@ -7,14 +7,14 @@ const orderSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  _id: {
-    type: mongoose.Schema.TypesObjectsId,
-    ref: 'User',
-    required: true,
-  },
   isComplete: {
     type: Boolean,
     required: true,
+   },
+   _owner: {
+     type: mongoose.Schema.Types.ObjectId,
+     ref: 'User',
+     required: true,
    },
   }, {
     timestamps: true,
