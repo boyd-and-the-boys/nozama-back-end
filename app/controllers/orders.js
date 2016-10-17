@@ -6,10 +6,17 @@ const Order = models.order;
 
 const authenticate = require('./concerns/authenticate');
 
+const userorders = (req, res, next) => {
+  let search = { _owner: req.currentUser._id };
+  Order.find(search)
+    .then(orders => res.json({ orders }))
+    .catch(err => next(err));
+};
+
 const index = (req, res, next) => {
   Order.find()
-  .then(orders => res.json({ orders }))
-  .catch(err => next(err));
+    .then(orders => res.json({ orders }))
+    .catch(err => next(err));
 };
 
 const show = (req, res, next) => {
@@ -55,6 +62,7 @@ const destroy = (req, res, next) => {
 };
 
 module.exports = controller({
+  userorders,
   index,
   show,
   create,

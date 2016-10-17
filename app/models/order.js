@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
   dateOrdered: {
     type: Date,
-    required: true,
+    required: false,
   },
   isComplete: {
     type: Boolean,
@@ -14,7 +14,7 @@ const orderSchema = new mongoose.Schema({
    _owner: {
      type: mongoose.Schema.Types.ObjectId,
      ref: 'User',
-     required: true,
+     required: false,
    },
   }, {
     timestamps: true,
