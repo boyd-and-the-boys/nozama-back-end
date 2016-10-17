@@ -22,6 +22,7 @@ module.exports = require('lib/wiring/routes')
 .resources('selected-products')
 .get('/my-orders', 'orders#userorders')
 .get('/my-shopping-cart', 'orders#incompleteorders')
+.get('/order-products', 'selected-products#orderproducts')
 
 // all routes created
 ;

@@ -6,11 +6,17 @@ const SelectedProduct = models["selected-product"];
 
 const authenticate = require('./concerns/authenticate');
 
+const orderproducts = (req, res, next) => {
+  let search = { _order: req.body.selectedProduct._order };
+  SelectedProduct.find(search).populate('_product').populate('_order')
+    .then(selectedProducts => res.json({ selectedProducts }))
+    .catch(err => next(err));
+};
+
 const index = (req, res, next) => {
   SelectedProduct.find().populate('_product').populate('_order')
-  // .then(selectedProducts => selectedProducts.populate('_product'))
-  .then(selectedProducts => res.json({ selectedProducts }))
-  .catch(err => next(err));
+    .then(selectedProducts => res.json({ selectedProducts }))
+    .catch(err => next(err));
 };
 
 const show = (req, res, next) => {
@@ -56,11 +62,12 @@ const destroy = (req, res, next) => {
 };
 
 module.exports = controller({
+  orderproducts,
   index,
   show,
   create,
   update,
   destroy,
 }, { before: [
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['index', 'show', 'orderproducts'] },
 ], });
