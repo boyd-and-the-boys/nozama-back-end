@@ -46,16 +46,22 @@ const makeErrorHandler = (res, next) =>
       res.status(400).json({ error }) :
     next(error);
 
-const signup = (req, res, next) => {
-  let credentials = req.body.credentials;
-  let user = { email: credentials.email, password: credentials.password };
+const createguestuser = (req, res, next) => {
+  let user = {};
+  console.log(user);
   getToken().then(token =>
     user.token = token
+  ).then(() =>
+    user.guest = true
+  ).then(() =>
+    user.email = crypto.randomBytes(16).toString('hex')
+  ).then(() =>
+    user.password = crypto.randomBytes(16).toString('base64')
   ).then(() =>
     new User(user).save()
   ).then(newUser => {
     let user = newUser.toObject();
-    delete user.token;
+    // delete user.token;
     delete user.passwordDigest;
     res.json({ user });
   }).catch(makeErrorHandler(res, next));
@@ -111,6 +117,22 @@ const changepw = (req, res, next) => {
   ).catch(makeErrorHandler(res, next));
 };
 
+const signup = (req, res, next) => {
+  // debug('Changing credentials');
+  console.log(req);
+  User.findOne({
+    _id: req.currentUser._id,
+    token: req.currentUser.token,
+  }).then(user => {
+    user.password = req.body.credentials.password;
+    user.email = req.body.credentials.email;
+    return user.save();
+  })
+  .then((/* user */) =>
+    res.sendStatus(200)
+  ).catch(makeErrorHandler(res, next));
+};
+
 module.exports = controller({
   index,
   show,
@@ -118,6 +140,7 @@ module.exports = controller({
   signin,
   signout,
   changepw,
+  createguestuser
 }, { before: [
-  { method: authenticate, except: ['signup', 'signin'] },
+  { method: authenticate, except: ['signin', 'createguestuser'] },
 ], });

@@ -7,7 +7,7 @@ const SelectedProduct = models["selected-product"];
 const authenticate = require('./concerns/authenticate');
 
 const orderproducts = (req, res, next) => {
-  let search = { _order: req.body.selectedProduct._order };
+  let search = { _order: req.query.selectedProduct._order };
   SelectedProduct.find(search).populate('_product').populate('_order')
     .then(selectedProducts => res.json({ selectedProducts }))
     .catch(err => next(err));

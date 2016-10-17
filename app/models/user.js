@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  // guest: {
+  //   type: Boolean,
+  //   required: true
+  // },
   passwordDigest: String,
 }, {
   timestamps: true,
