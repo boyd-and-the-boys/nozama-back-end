@@ -13,6 +13,13 @@ const userorders = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const incompleteorders = (req, res, next) => {
+  let search = { _owner: req.currentUser._id, isComplete: false };
+  Order.find(search)
+    .then(orders => res.json({ orders }))
+    .catch(err => next(err));
+};
+
 const index = (req, res, next) => {
   Order.find()
     .then(orders => res.json({ orders }))
@@ -63,6 +70,7 @@ const destroy = (req, res, next) => {
 
 module.exports = controller({
   userorders,
+  incompleteorders,
   index,
   show,
   create,
