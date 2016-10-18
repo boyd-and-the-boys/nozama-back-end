@@ -11,6 +11,14 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  photoSmall: {
+    type: String,
+    required: false
+  },
+  photoLarge: {
+    type: String,
+    required: false
+  },
   _owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
