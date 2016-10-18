@@ -1,7 +1,14 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const uri = process.env.MONGOLAB_URI || 'mongodb://localhost/nozama';
+
+let uri;
+if (process.env.NODE_ENV === 'production') {
+  uri = process.env.MONGODB_URI;
+} else {
+  uri = 'mongodb://localhost/boyd-and-the-boys';
+}
+
 mongoose.Promise = global.Promise;
 mongoose.connect(uri);
 
