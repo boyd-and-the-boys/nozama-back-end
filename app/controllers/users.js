@@ -48,7 +48,6 @@ const makeErrorHandler = (res, next) =>
 
 const createguestuser = (req, res, next) => {
   let user = {};
-  console.log(user);
   getToken().then(token =>
     user.token = token
   ).then(() =>
@@ -63,6 +62,7 @@ const createguestuser = (req, res, next) => {
     let user = newUser.toObject();
     // delete user.token;
     delete user.passwordDigest;
+    user.token = encodeToken(user.token);
     res.json({ user });
   }).catch(makeErrorHandler(res, next));
 
@@ -118,14 +118,13 @@ const changepw = (req, res, next) => {
 };
 
 const signup = (req, res, next) => {
-  // debug('Changing credentials');
-  console.log(req);
   User.findOne({
     _id: req.currentUser._id,
     token: req.currentUser.token,
   }).then(user => {
     user.password = req.body.credentials.password;
     user.email = req.body.credentials.email;
+    user.guest = false;
     return user.save();
   })
   .then((/* user */) =>

@@ -6,7 +6,7 @@ curl --include --request POST http://localhost:3000/selected-products \
     "selectedProduct": {
       "quantity": 12,
       "size": "S",
-      "_order": 58029d2729b8c260078108e4,
-      "_product": 58029caf29b8c260078108e2
+      "_order": "58029d2729b8c260078108e4",
+      "_product": "58029caf29b8c260078108e2"
     }
   }'
