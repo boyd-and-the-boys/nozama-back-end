@@ -10,7 +10,7 @@ const cors = require('cors');
 const loader = require('lib/wiring/loader');
 
 const corsOptions = {
-  origin: process.env.CLIENT_ORIGIN || 'http://localhost:8080',
+  origin: process.env.CLIENT_ORIGIN || 'https://boyd-and-the-boys.github.io/nozama-front-end/',
 };
 
 const before = (app) => {
