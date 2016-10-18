@@ -33,9 +33,12 @@ const show = (req, res, next) => {
 };
 
 const create = (req, res, next) => {
+  console.log(req);
   let order = Object.assign(req.body.order, {
     _owner: req.currentUser._id,
+    isComplete: false
   });
+  console.log(order);
   Order.create(order)
     .then(order => res.json({ order }))
     .catch(err => next(err));

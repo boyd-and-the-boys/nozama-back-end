@@ -132,12 +132,26 @@ const signup = (req, res, next) => {
   ).catch(makeErrorHandler(res, next));
 };
 
+const destroy = (req, res, next) => {
+  let search = { _id: req.params.id };
+  User.findOne(search)
+    .then(user => {
+      if (!user) {
+        return next();
+      }
+      return user.remove()
+        .then(() => res.sendStatus(200));
+    })
+    .catch(err => next(err));
+};
+
 module.exports = controller({
   index,
   show,
   signup,
   signin,
   signout,
+  destroy,
   changepw,
   createguestuser
 }, { before: [
