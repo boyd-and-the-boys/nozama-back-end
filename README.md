@@ -53,8 +53,8 @@ dazzle and delight all the lucky souls who lay eyes upon you!
 | GET     | `/my-shopping-cart` | `orders#incompleteorders`         |
 | GET     | `/order-products`   | `selected-products#orderproducts` |
 
-**Collaborators**: Alex Beers, Jen Boyd and Ben Morse
-
 **Deployed back-end**: https://generic-assemblage.herokuapp.com
 
 **Front-end repo**: https://github.com/boyd-and-the-boys/nozama-front-end/tree/development
+
+**Collaborators**: Alex Beers, Jen Boyd and Ben Morse
