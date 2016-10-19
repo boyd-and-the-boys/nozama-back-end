@@ -50,5 +50,5 @@ Custom Routes
 
 Collaborators: Alex Beers, Jen Boyd and Ben Morse
 
-A link to the deployed back-end app.
-A link to the repo for your front-end.
+Deployed back-end: https://generic-assemblage.herokuapp.com
+Front-end repo: https://github.com/boyd-and-the-boys/nozama-front-end/tree/development
