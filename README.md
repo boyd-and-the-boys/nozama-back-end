@@ -5,7 +5,8 @@ dazzle and delight all the lucky souls who lay eyes upon you!
 
 API
 
-User Authentication
+**User Authentication:**
+
 | Verb    | URI Pattern           | Controller#Action       |
 |:-------:|:---------------------:|:-----------------------:|
 | POST    | `/sign-up`            | `users#createguestuser` |
@@ -14,7 +15,8 @@ User Authentication
 | DELETE  | `/sign-out/:id`       |  `users#signout`        |
 | PATCH   | `/change-password/:id`|  `users#changepw`       |
 
-Products
+**Products:**
+
 | Verb    | URI Pattern           | Controller#Action       |
 |:-------:|:---------------------:|:-----------------------:|
 | POST    | `/products`           | `products#index`        |
@@ -23,7 +25,8 @@ Products
 | DELETE  | `/products/:id`       | `products#update`       |
 | PATCH   | `/products/:id`       | `products#destroy`      |
 
-Orders
+**Orders:**
+
 | Verb    | URI Pattern           | Controller#Action       |
 |:-------:|:---------------------:|:-----------------------:|
 | POST    | `/orders`             | `orders#index`          |
@@ -32,7 +35,8 @@ Orders
 | DELETE  | `/orders/:id`         | `orders#update`         |
 | PATCH   | `/orders/:id`         | `orders#destroy`        |
 
-Selected Products
+**Selected Products:**
+
 | Verb    | URI Pattern             | Controller#Action           |
 |:-------:|:-----------------------:|:---------------------------:|
 | POST    | `/selected-products`    | `selected-products#index`   |
@@ -41,7 +45,8 @@ Selected Products
 | DELETE  | `/selected-products/:id`| `selected-products#update`  |
 | PATCH   | `/selected-products/:id`| `selected-products#destroy` |
 
-Custom Routes
+**Custom Routes:**
+
 | Verb    | URI Pattern         | Controller#Action                 |
 |:-------:|:-------------------:|:---------------------------------:|
 | GET     | `/my-orders`        | `orders#userorders`               |
