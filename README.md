@@ -3,7 +3,7 @@ in the finest apparel associated with WDI 14. Perfect for staying in or for a
 swinging night out on the town, these beautifully crafted garments are sure to
 dazzle and delight all the lucky souls who lay eyes upon you!
 
-**API:**
+**API**
 
 **User Authentication:**
 
@@ -52,6 +52,7 @@ dazzle and delight all the lucky souls who lay eyes upon you!
 | GET     | `/my-orders`        | `orders#userorders`               |
 | GET     | `/my-shopping-cart` | `orders#incompleteorders`         |
 | GET     | `/order-products`   | `selected-products#orderproducts` |
+
 
 **Deployed back-end**: https://generic-assemblage.herokuapp.com
 
