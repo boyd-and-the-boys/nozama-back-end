@@ -6,7 +6,7 @@ dazzle and delight all the lucky souls who lay eyes upon you!
 API
 
 User Authentication
-| Verb    |      URI Pattern      |    Controller#Action    |
+| Verb    | URI Pattern           | Controller#Action       |
 |:-------:|:---------------------:|:-----------------------:|
 | POST    | `/sign-up`            | `users#createguestuser` |
 | PATCH   | `/sign-up`            | `users#signup`          |
@@ -15,7 +15,7 @@ User Authentication
 | PATCH   | `/change-password/:id`|  `users#changepw`       |
 
 Products
-| Verb    |      URI Pattern      |    Controller#Action    |
+| Verb    | URI Pattern           | Controller#Action       |
 |:-------:|:---------------------:|:-----------------------:|
 | POST    | `/products`           | `products#index`        |
 | PATCH   | `/products/:id`       | `products#show`         |
@@ -24,7 +24,7 @@ Products
 | PATCH   | `/products/:id`       | `products#destroy`      |
 
 Orders
-| Verb    |      URI Pattern      |    Controller#Action    |
+| Verb    | URI Pattern           | Controller#Action       |
 |:-------:|:---------------------:|:-----------------------:|
 | POST    | `/orders`             | `orders#index`          |
 | PATCH   | `/orders/:id`         | `orders#show`           |
@@ -33,7 +33,7 @@ Orders
 | PATCH   | `/orders/:id`         | `orders#destroy`        |
 
 Selected Products
-| Verb    |      URI Pattern        |    Controller#Action       |
+| Verb    | URI Pattern             | Controller#Action          |
 |:-------:|:-----------------------:|:---------------------------|
 | POST    | `/selected-products`    | `selected-products#index`  |
 | PATCH   | `/selected-products/:id`| `selected-products#show`   |
@@ -42,7 +42,7 @@ Selected Products
 | PATCH   | `/selected-products/:id`| `selected-products#destroy`|
 
 Custom Routes
-| Verb    |      URI Pattern    |        Controller#Action          |
+| Verb    | URI Pattern         | Controller#Action                 |
 |:-------:|:-------------------:|:---------------------------------:|
 | GET     | `/my-orders`        | `orders#userorders`               |
 | GET     | `/my-shopping-cart` | `orders#incompleteorders`         |
