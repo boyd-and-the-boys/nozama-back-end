@@ -1,4 +1,4 @@
-Welcome to Genèric Assemblage, an artisanal fashion-forward boutique specializing
+Welcome to **Genèric Assemblage**, an artisanal fashion-forward boutique specializing
 in the finest apparel associated with WDI 14. Perfect for staying in or for a
 swinging night out on the town, these beautifully crafted garments are sure to
 dazzle and delight all the lucky souls who lay eyes upon you!
@@ -53,8 +53,8 @@ dazzle and delight all the lucky souls who lay eyes upon you!
 | GET     | `/my-shopping-cart` | `orders#incompleteorders`         |
 | GET     | `/order-products`   | `selected-products#orderproducts` |
 
-Collaborators: Alex Beers, Jen Boyd and Ben Morse
+**Collaborators**: Alex Beers, Jen Boyd and Ben Morse
 
-Deployed back-end: https://generic-assemblage.herokuapp.com
+**Deployed back-end**: https://generic-assemblage.herokuapp.com
 
-Front-end repo: https://github.com/boyd-and-the-boys/nozama-front-end/tree/development
+**Front-end repo**: https://github.com/boyd-and-the-boys/nozama-front-end/tree/development
