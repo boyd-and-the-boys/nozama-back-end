@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 let uri;
 if (process.env.NODE_ENV === 'production') {
-  uri = process.env.MONGODB_URI;
+  uri = process.env.MONGODB_URI || 'mongodb://localhost/boyd-and-the-boys';
 } else {
   uri = 'mongodb://localhost/boyd-and-the-boys';
 }
