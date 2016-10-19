@@ -33,13 +33,13 @@ Orders
 | PATCH   | `/orders/:id`         | `orders#destroy`        |
 
 Selected Products
-| Verb    | URI Pattern             | Controller#Action          |
-|:-------:|:-----------------------:|:---------------------------|
-| POST    | `/selected-products`    | `selected-products#index`  |
-| PATCH   | `/selected-products/:id`| `selected-products#show`   |
-| POST    | `/selected-products`    | `selected-products#create` |
-| DELETE  | `/selected-products/:id`| `selected-products#update` |
-| PATCH   | `/selected-products/:id`| `selected-products#destroy`|
+| Verb    | URI Pattern             | Controller#Action           |
+|:-------:|:-----------------------:|:---------------------------:|
+| POST    | `/selected-products`    | `selected-products#index`   |
+| PATCH   | `/selected-products/:id`| `selected-products#show`    |
+| POST    | `/selected-products`    | `selected-products#create`  |
+| DELETE  | `/selected-products/:id`| `selected-products#update`  |
+| PATCH   | `/selected-products/:id`| `selected-products#destroy` |
 
 Custom Routes
 | Verb    | URI Pattern         | Controller#Action                 |
