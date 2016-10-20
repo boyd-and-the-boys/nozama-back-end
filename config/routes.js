@@ -18,7 +18,7 @@ module.exports = require('lib/wiring/routes')
 .patch('/change-password/:id', 'users#changepw')
 .resources('users', { only: ['index', 'show', 'destroy'] })
 
-.get('/products', 'index#products')
+.get('/products', 'products#index')
 .resources('orders')
 .resources('selected-products')
 .get('/my-orders', 'orders#userorders')
