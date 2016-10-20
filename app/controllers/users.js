@@ -133,7 +133,7 @@ const signup = (req, res, next) => {
 };
 
 const destroy = (req, res, next) => {
-  let search = { _id: req.params.id };
+  let search = { _id: req.currentUser._id };
   User.findOne(search)
     .then(user => {
       if (!user) {

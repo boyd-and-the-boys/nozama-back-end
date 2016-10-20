@@ -11,7 +11,7 @@ curl --include --request PATCH http://localhost:3000/sign-up/ \
     }
   }'
 
-curl --include --request POST http://localhost:3000/sign-up \
+curl --include --request POST https://generic-assemblage.herokuapp.com/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
